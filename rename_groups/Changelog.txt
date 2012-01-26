@@ -1,0 +1,7 @@
+Changelog
+
+07/19/2011
+Added Group Custom Layout mappings
+
+07/04/2011
+Added Custom Index mappings
