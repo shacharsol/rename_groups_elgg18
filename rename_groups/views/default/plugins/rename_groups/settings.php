@@ -1,18 +1,11 @@
 <?php
 // read the languages directory to get a list of existing translations
-global $CONFIG;
 
-$language_location = $CONFIG->pluginspath . "rename_groups/languages/";
+$language_files = elgg_get_file_list(elgg_get_plugins_path() . "rename_groups/languages/", array(), array(), array('.php'));
 
-if($handle = opendir($language_location)) {
-
-	$translations = array();
-		while (false !== ($file = readdir($handle))) {
-			if ($file != "." && $file != "..") {
-				$translations[] = basename($file, '.php');
-			}
-		}
-		closedir($handle);
+$translations = array();
+foreach($language_files as $language){
+  $translations[] = basename($language, '.php');
 }
 
 if(count($translations) == 0){
@@ -46,4 +39,3 @@ else{
 		echo $html;
 	}
 }
-?>

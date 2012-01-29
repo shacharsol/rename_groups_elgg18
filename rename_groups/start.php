@@ -12,13 +12,11 @@
 
 function rename_groups_init()
 {
-	global $CONFIG;
-  	
 	// Load the language file
-	register_translations($CONFIG->pluginspath . "rename_groups/languages/");
+	register_translations(elgg_get_plugins_path() . "rename_groups/languages/");
 	
 	// Extend system CSS with our own styles
-	elgg_extend_view('metatags','rename_groups/metatags');
+	elgg_extend_view('css/elgg','rename_groups/css');
 	
 }
 
